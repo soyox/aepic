@@ -13,7 +13,7 @@ function Home() {
   return (
     <div>
       <h1>Home</h1>
-      <div className="bg-slate-800 rounded-xl p-8 md:flex md:p-0">
+      <div className="bg-slate-800 mb-2 rounded-xl p-8 md:flex md:p-0">
         <img
           className="w-32 h-32 rounded-full mx-auto md:w-48 md:h-auto md:rounded-none"
           src="https://www.tailwindcss.cn/_next/static/media/sarah-dayan.a8ff3f1095a58085a82e3bb6aab12eb2.jpg"
@@ -33,18 +33,20 @@ function Home() {
           </div>
         </div>
       </div>
-      <Link
-        className="bg-purple-400 px-2 py-1 rounded-full"
-        to={'/home/dashboard'}
-      >
-        DashBoard
-      </Link>
-      <button
-        onClick={() => navigater('/home/chart')}
-        className="bg-purple-400 px-2 py-1 rounded-full"
-      >
-        Chart
-      </button>
+      <div className="flex">
+        <Link
+          className="bg-purple-400 px-2 py-1 rounded-full inline-block"
+          to={'/home/dashboard'}
+        >
+          DashBoard
+        </Link>
+        <button
+          onClick={() => navigater('/home/chart')}
+          className="bg-purple-400 px-2 py-1 rounded-full"
+        >
+          Chart
+        </button>
+      </div>
       <Outlet></Outlet>
     </div>
   );

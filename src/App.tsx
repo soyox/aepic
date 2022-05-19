@@ -2,18 +2,18 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Main from './layout/Main';
 import { RenderRoutes } from './router';
+import { getPictures } from './api';
 
 function App() {
-  console.log(import.meta.env.VITE_BASE_API);
-
+  useEffect(() => {
+    getPictures().then((res) => {
+      console.log(res);
+    });
+  }, []);
   return (
-    <div className="App p-4">
+    <div className="App">
       <Main></Main>
-      <header className="App-header">
-        <h1 className="text-lg mb-1 text-red-300 md:text-blue-900">
-          Hello Vite + React!
-        </h1>
-      </header>
+      <header className="App-header"></header>
       {/* 一级路由出口 */}
       <RenderRoutes />
     </div>
