@@ -11,12 +11,12 @@ import 'virtual:svg-icons-register';
 useRem();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <Store>
-      <Router>
-        <App />
-      </Router>
-    </Store>
-    ,
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <Store>
+    <Router>
+      <App />
+    </Router>
+  </Store>,
+  // ,
+  // </React.StrictMode>,
 );

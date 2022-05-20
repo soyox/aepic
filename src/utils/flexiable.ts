@@ -41,3 +41,7 @@ export const useRem = () => {
   document.addEventListener('DOMContentLoaded', useRemListener);
   window.addEventListener('resize', useRemListener);
 };
+
+export const isMobileStatic = () => {
+  return document.documentElement.clientWidth < PC_DEVICE_WIDTH;
+};

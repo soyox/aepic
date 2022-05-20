@@ -1,3 +1,4 @@
+import Main from '@/layout/Main';
 import { useEffect } from 'react';
 import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
 function Home() {
@@ -12,6 +13,7 @@ function Home() {
 
   return (
     <div>
+      <Main></Main>
       <h1>Home</h1>
       <div className="bg-slate-800 mb-2 rounded-xl p-8 md:flex md:p-0">
         <img

@@ -2,18 +2,12 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Main from './layout/Main';
 import { RenderRoutes } from './router';
-import { getPictures } from './api';
+import Header from './layout/Header';
+import { isMobileStatic } from './utils/flexiable';
 
 function App() {
-  useEffect(() => {
-    getPictures().then((res) => {
-      console.log(res);
-    });
-  }, []);
   return (
     <div className="App">
-      <Main></Main>
-      <header className="App-header"></header>
       {/* 一级路由出口 */}
       <RenderRoutes />
     </div>

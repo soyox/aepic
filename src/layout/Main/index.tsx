@@ -1,9 +1,12 @@
+import { HTMLAttributes } from 'react';
 import Navigation from './Navigation';
-const Main = () => {
+interface MainPropsBase {}
+export type MainProps = MainPropsBase & HTMLAttributes<HTMLElement>;
+const Main = ({ ...restProps }: MainProps) => {
   return (
-    <div>
+    <main {...restProps}>
       <Navigation></Navigation>
-    </div>
+    </main>
   );
 };
 

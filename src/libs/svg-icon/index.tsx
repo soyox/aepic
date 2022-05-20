@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { HTMLAttributes, useEffect, useState } from 'react';
 
 interface SVGIconProps {
   //显示的svg
@@ -8,15 +8,20 @@ interface SVGIconProps {
   // tailwind类名
   fillClass?: string;
 }
-const SVGIcon = (props: SVGIconProps) => {
-  const { name, fillClass } = props;
-
+export type SVGIcon = SVGIconProps & HTMLAttributes<HTMLOrSVGElement>;
+const SVGIcon = ({
+  name,
+  fillClass,
+  color,
+  className,
+  ...restProps
+}: SVGIcon) => {
   const [symbolId, setSymbolId] = useState(name);
   useEffect(() => {
     setSymbolId(`#icon-${name}`);
   }, [name]);
   return (
-    <svg className={fillClass} aria-hidden={true}>
+    <svg {...restProps} className={className} fill={color} aria-hidden={true}>
       <use xlinkHref={symbolId} />
     </svg>
   );
