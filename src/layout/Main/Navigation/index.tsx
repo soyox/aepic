@@ -1,10 +1,6 @@
 import MobileNav from './components/mobile';
 import PcNav from './components/pc';
-import { isMobileStatic, isMobileTerminal } from '@/utils/flexiable';
-import { useEffect, useState } from 'react';
-import { getGategories, getPictures } from '@/api';
-import { Category } from './types';
-import { useQuery, useQueryClient } from 'react-query';
+import { isMobileStatic } from '@/utils/flexiable';
 import { useRecoilState } from 'recoil';
 import { categoriesState } from '@/store';
 

@@ -36,27 +36,29 @@ export default function My() {
       {isLogin ? (
         <Popover
           layer={
-            <div className="w-[180px] overflow-hidden border p-1 bg-white rounded-md">
+            <div className="w-[180px] overflow-hidden border p-1 bg-white dark:bg-zinc-800 rounded-md">
               {options.map((option) => (
                 <Link
                   to={option.path}
                   key={option?.id}
-                  className="flex items-center cursor-pointer text-sm p-1 hover:bg-zinc-100 duration-300 rounded-xl"
+                  className="flex items-center cursor-pointer text-sm p-1 hover:bg-zinc-100 dark:hover:bg-zinc-600  duration-300 rounded-xl"
                   // onClick={() => handleThemeChange(theme)}
                 >
                   <SVGIcon
                     name={option?.icon || ''}
-                    className="h-2 w-2 mr-1 fill-zinc-900"
+                    className="h-2 w-2 mr-1 fill-zinc-900 dark:fill-zinc-300"
                   ></SVGIcon>
-                  <span className="text-zinc-900 text-sm">{option?.name}</span>
+                  <span className="text-zinc-900 dark:text-zinc-300 text-sm">
+                    {option?.name}
+                  </span>
                 </Link>
               ))}
             </div>
           }
           location="bottom-left"
         >
-          <div className="flex items-center pr-0.5 cursor-pointer rounded outline-none hover:bg-zinc-100 duration-200">
-            <div className="bg-zinc-50 h-4 w-4 rounded overflow-hidden">
+          <div className="flex items-center pr-0.5 cursor-pointer rounded outline-none hover:bg-zinc-100 dark:hover:bg-zinc-900 duration-200">
+            <div className="bg-zinc-50 dark:bg-zinc-800 h-4 w-4 rounded overflow-hidden">
               <img
                 src="src\assets\avatar-test.jpg"
                 width={'100%'}
@@ -68,8 +70,11 @@ export default function My() {
                 className="absolute w-2 h-2 bottom-0 translate-y-[25%] right-[18px] "
               ></SVGIcon>
             </div>
-            <div className="">
-              <SVGIcon name="down" className="h-2 w-2"></SVGIcon>
+            <div>
+              <SVGIcon
+                name="down"
+                className="h-2 w-2 fill-zinc-900 dark:fill-zinc-300"
+              ></SVGIcon>
             </div>
           </div>
         </Popover>
@@ -77,8 +82,7 @@ export default function My() {
         <Button
           onClick={handleLogin}
           icon="my"
-          iconColor="#fff"
-          iconClass="h-2 w-2"
+          iconClass="h-2 w-2 fill-white"
         ></Button>
       )}
     </div>

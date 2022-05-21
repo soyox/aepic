@@ -29,10 +29,11 @@ export default function Search({ children, onSearch }: SearchProps) {
         onKeyDown={(e) => e.code === 'Enter' && handleSearch()}
         type="text"
         placeholder="搜索"
-        className={`block w-full h-[44px] pl-4 outline-0 bg-zinc-100 caret-zinc-400
-         text-zinc-900 rounded-xl tracking-wide text-sm font-semibold border border-zinc-100
-          focus:border-red-300 duration-500 group-hover:bg-white group-hover:border-zinc-100
-         `}
+        className="block w-full h-[44px] pl-4 outline-0 bg-zinc-100 dark:bg-zinc-800 caret-zinc-400
+         text-zinc-900 rounded-xl tracking-wide text-sm font-semibold border border-zinc-100 dark:border-zinc-600
+          focus:border-red-300 dark:focus:border-red-300/10 duration-500 group-hover:bg-white dark:group-hover:bg-zinc-800 group-hover:border-zinc-100 dark:group-hover:border-zinc-600
+          dark:text-zinc-300
+          "
       />
       {/* 清空按钮 */}
       <SVGIcon
@@ -40,7 +41,7 @@ export default function Search({ children, onSearch }: SearchProps) {
         name="delete"
         className={`opacity-0 group-hover:opacity-${
           value ? 100 : 0
-        } h-1.5 w-1.5 absolute translate-y-[-50%] top-[50%] right-9 cursor-pointer duration-500`}
+        } h-1.5 w-1.5 absolute fill-zinc-600 dark:fill-zinc-300 translate-y-[-50%] top-[50%] right-9 cursor-pointer duration-500`}
       ></SVGIcon>
       {/* 分割线 */}
       <div className="opacity-0 group-hover:opacity-100 h-1.5 w-[1px] absolute translate-y-[-50%] top-[50%] z-40 right-7 duration-500 bg-zinc-200"></div>

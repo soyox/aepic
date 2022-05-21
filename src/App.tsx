@@ -4,7 +4,8 @@ import { useRecoilState } from 'recoil';
 import { getGategories } from './api';
 import './App.css';
 import { RenderRoutes } from './router';
-import { categoriesState } from './store';
+import { categoriesState, themeState } from './store';
+import { useChangeTheme } from './utils';
 
 function App() {
   // 获取导航栏数据
@@ -15,6 +16,8 @@ function App() {
       setCategories(queryState.data.data.categorys);
     }
   }, [queryState]);
+
+  useChangeTheme();
 
   return (
     <div className="App">

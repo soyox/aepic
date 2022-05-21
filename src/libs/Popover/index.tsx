@@ -40,7 +40,7 @@ export default function Popover({ children, layer, location }: Props) {
           >
             <div
               className={classnames(
-                'absolute',
+                'absolute z-50',
                 LocationEnum[location],
                 // className,
               )}

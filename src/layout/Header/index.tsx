@@ -19,7 +19,9 @@ const Header = ({ className, ...restProps }: Header) => {
     <header
       {...restProps}
       className={
-        'bg-white border-b border-b-zinc-200 w-full px-2 py-1' + ' ' + className
+        'bg-white dark:bg-zinc-800 border-b border-b-zinc-200 dark:border-b-zinc-700 w-full px-2 py-1 duration-300' +
+        ' ' +
+        className
       }
     >
       <div className="flex h-full items-center">
