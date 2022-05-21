@@ -2,12 +2,13 @@ import { THEMES } from '@/constants';
 import Button from '@/libs/Button';
 import Popover from '@/libs/Popover';
 import SVGIcon from '@/libs/svg-icon';
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, useState } from 'react';
 
 type Props = {} & HTMLAttributes<HTMLElement>;
 export default function Theme({ ...resProps }: Props) {
+  const [currentTheme, setCurrentTheme] = useState('theme');
   const handleThemeChange = (theme: typeof THEMES[0]) => {
-    console.log(theme);
+    setCurrentTheme(theme?.icon || 'theme');
   };
   return (
     <div {...resProps}>
@@ -32,7 +33,7 @@ export default function Theme({ ...resProps }: Props) {
         }
       >
         <Button
-          icon="theme"
+          icon={currentTheme}
           type="info"
           size="icon-default"
           iconClass="h-2 w-2"

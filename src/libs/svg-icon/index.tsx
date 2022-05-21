@@ -8,14 +8,14 @@ interface SVGIconProps {
   // tailwind类名
   fillClass?: string;
 }
-export type SVGIcon = SVGIconProps & HTMLAttributes<HTMLOrSVGElement>;
+export type SVGIconType = SVGIconProps & HTMLAttributes<HTMLOrSVGElement>;
 const SVGIcon = ({
   name,
   fillClass,
   color,
   className,
   ...restProps
-}: SVGIcon) => {
+}: SVGIconType) => {
   const [symbolId, setSymbolId] = useState(name);
   useEffect(() => {
     setSymbolId(`#icon-${name}`);
