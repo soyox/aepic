@@ -1,29 +1,39 @@
 import MobileNav from './components/mobile';
 import PcNav from './components/pc';
-import { isMobileTerminal } from '@/utils/flexiable';
+import { isMobileStatic, isMobileTerminal } from '@/utils/flexiable';
 import { useEffect, useState } from 'react';
-import { getGategories } from '@/api';
+import { getGategories, getPictures } from '@/api';
 import { Category } from './types';
+import { useQuery, useQueryClient } from 'react-query';
+import { useRecoilState } from 'recoil';
+import { categoriesState } from '@/store';
 
 const Navigation = () => {
-  const isMT = isMobileTerminal();
-  const [categories, setCategories] = useState<Category[]>([]);
-  useEffect(() => {
-    getGategories().then((res) => {
-      setCategories([
+  const isMT = isMobileStatic();
+  const [categories] = useRecoilState(categoriesState);
+
+  return isMT ? (
+    <MobileNav
+      categories={[
         {
           id: 'all',
           name: '全部',
           urlname: 'all',
         },
-        ...res.categorys,
-      ]);
-    });
-  }, []);
-  return isMT ? (
-    <MobileNav categories={categories}></MobileNav>
+        ...categories,
+      ]}
+    ></MobileNav>
   ) : (
-    <PcNav></PcNav>
+    <PcNav
+      categories={[
+        {
+          id: 'all',
+          name: '全部',
+          urlname: 'all',
+        },
+        ...categories,
+      ]}
+    ></PcNav>
   );
 };
 

@@ -2,7 +2,8 @@ import Main from '@/layout/Main';
 import { useEffect } from 'react';
 import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
 function Home() {
-  const navigater = useNavigate();
+  // const navigater = useNavigate();
+  console.log('Home-change--------------------');
 
   useEffect(() => {
     console.log('Home(mounted)');
@@ -43,7 +44,7 @@ function Home() {
           DashBoard
         </Link>
         <button
-          onClick={() => navigater('/home/chart')}
+          // onClick={() => navigater('/home/chart')}
           className="bg-purple-400 px-2 py-1 rounded-full"
         >
           Chart
