@@ -1,9 +1,29 @@
 import request from '../utils/request';
 
-export function getPictures() {
-  return request.get('/picture/list');
+export type Picture = {
+  author: string;
+  authorLike: string;
+  avatar: string;
+  id: number;
+  photo: string;
+  photoHeight: number;
+  photoLink: string;
+  photoType: string;
+  photoWidth: number;
+  tags: string;
+  title: string;
+};
+export type GetPicturesRes = {
+  page: number;
+  size: number;
+  total: number;
+  data: Picture[];
+};
+export function getPictures(page = 1, size = 20) {
+  return request.get(
+    `/picture/list?page=${page}&size=${size}`,
+  ) as Promise<GetPicturesRes>;
 }
-
 export function getGategories(id: number) {
   const categories = {
     code: 200,

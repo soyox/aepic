@@ -78,7 +78,7 @@ const MobileNav = (props: MobileNavpProps) => {
     setIsMenuOpen(false);
   };
   return (
-    <div className="bg-white sticky h-4 top-0 left-0 z-10 select-none">
+    <div className="bg-white sticky h-4 w-full top-0 left-0 z-10 select-none">
       <Popup open={isMenuOpen} onClose={() => setIsMenuOpen(false)}>
         <Menu categories={categories} onSelect={handleMenuSelect}></Menu>
       </Popup>

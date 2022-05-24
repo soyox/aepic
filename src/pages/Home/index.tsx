@@ -13,7 +13,7 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="h-screen w-screen fixed top-0 left-0">
       <Main></Main>
       <h1>Home</h1>
       <div className="bg-slate-800 mb-2 rounded-xl p-8 md:flex md:p-0">

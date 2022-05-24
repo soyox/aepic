@@ -5,7 +5,7 @@ import pcRoutes from './modules/pc-routes';
 import { isMobileStatic, isMobileTerminal } from '@/utils/flexiable';
 
 export const RenderRoutes = React.memo(() => {
-  const isMT = isMobileStatic();
+  const isMT = isMobileTerminal();
   const routes = useRoutes(isMT ? mobileRoutes : pcRoutes);
   return routes;
 });

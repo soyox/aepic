@@ -20,7 +20,8 @@ function App() {
   useChangeTheme();
 
   return (
-    <div className="App">
+    //  h-screen w-screen fixed top-0 left-0
+    <div className="App h-screen w-screen fixed top-0 left-0">
       {/* 一级路由出口 */}
       <RenderRoutes />
     </div>

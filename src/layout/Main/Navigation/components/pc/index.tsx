@@ -19,7 +19,7 @@ const pcNav = ({ categories }: PCNavProps) => {
     setSelectedIndex(index);
   };
   return (
-    <div className="bg-white-600 dark:bg-zinc-800 sticky top-0 left-0 w-full z-10 duration-300">
+    <div className="bg-white dark:bg-zinc-800 sticky top-0 left-0 w-full z-10 duration-300">
       <ul
         className={classnames(
           'w-[800px] relative flex flex-wrap justify-center overflow-x-auto px-[10px] py-1 text-xs text-zinc-600 dark:text-zinc-300 duration-300 overflow-hidden mx-auto select-none',

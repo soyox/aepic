@@ -1,11 +1,11 @@
 import MobileNav from './components/mobile';
 import PcNav from './components/pc';
-import { isMobileStatic } from '@/utils/flexiable';
+import { isMobileStatic, isMobileTerminal } from '@/utils/flexiable';
 import { useRecoilState } from 'recoil';
 import { categoriesState } from '@/store';
 
 const Navigation = () => {
-  const isMT = isMobileStatic();
+  const isMT = isMobileTerminal();
   const [categories] = useRecoilState(categoriesState);
 
   return isMT ? (
